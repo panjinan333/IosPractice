@@ -1,0 +1,978 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38950866AAC80C9921A6785D /* libPods-IosPractice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1EB9CFD80185E27444DB4AC /* libPods-IosPractice.a */; };
+		454790CD235D94C300F051B7 /* LocalMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454790CC235D94C300F051B7 /* LocalMusicViewController.m */; };
+		454790D0235DA16000F051B7 /* AVPlayerQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 454790CF235DA16000F051B7 /* AVPlayerQueueViewController.m */; };
+		454790D3235DA1A900F051B7 /* AVPlayerQueueView.m in Sources */ = {isa = PBXBuildFile; fileRef = 454790D2235DA1A900F051B7 /* AVPlayerQueueView.m */; };
+		454790D6235FFEB700F051B7 /* AVPlayerModelObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 454790D5235FFEB700F051B7 /* AVPlayerModelObj.m */; };
+		454790F72363329100F051B7 /* LocalMusicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 454790F62363329100F051B7 /* LocalMusicView.m */; };
+		458285F2237297E900527859 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458285F1237297E900527859 /* CoreTelephony.framework */; };
+		458285F4237299AE00527859 /* 肖战 - 【魏无羡】曲尽陈情.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 458285F3237299AE00527859 /* 肖战 - 【魏无羡】曲尽陈情.mp3 */; };
+		458285F6237299B700527859 /* 肖战&王一博 - 【主题曲】无羁（合唱版）.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 458285F5237299B700527859 /* 肖战&王一博 - 【主题曲】无羁（合唱版）.mp3 */; };
+		458285F823729E6600527859 /* 彭楚粤 _ 白澍 _ 肖战 _ 陈泽希 _ R1SE夏之光 - 流星雨 (Live).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 458285F723729E6600527859 /* 彭楚粤 _ 白澍 _ 肖战 _ 陈泽希 _ R1SE夏之光 - 流星雨 (Live).mp3 */; };
+		45A4F81F234C23DF00AA8DFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F81E234C23DF00AA8DFB /* AppDelegate.m */; };
+		45A4F822234C23DF00AA8DFB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F821234C23DF00AA8DFB /* ViewController.m */; };
+		45A4F825234C23DF00AA8DFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F823234C23DF00AA8DFB /* Main.storyboard */; };
+		45A4F827234C23E000AA8DFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F826234C23E000AA8DFB /* Assets.xcassets */; };
+		45A4F82A234C23E000AA8DFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F828234C23E000AA8DFB /* LaunchScreen.storyboard */; };
+		45A4F82D234C23E000AA8DFB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F82C234C23E000AA8DFB /* main.m */; };
+		45A4F837234C23E000AA8DFB /* IosPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F836234C23E000AA8DFB /* IosPracticeTests.m */; };
+		45A4F842234C23E000AA8DFB /* IosPracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F841234C23E000AA8DFB /* IosPracticeUITests.m */; };
+		45A4F850234C8A4B00AA8DFB /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F84F234C8A4B00AA8DFB /* loading.gif */; };
+		45A4F853234CC0BA00AA8DFB /* FirstPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F852234CC0BA00AA8DFB /* FirstPageViewController.m */; };
+		45A4F85C234CCA6100AA8DFB /* VedioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F85B234CCA6100AA8DFB /* VedioViewController.m */; };
+		45A4F861234CCACA00AA8DFB /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F860234CCACA00AA8DFB /* AudioViewController.m */; };
+		45A4F869234D8BE100AA8DFB /* AudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F868234D8BE100AA8DFB /* AudioView.m */; };
+		45A4F86D234D8C1E00AA8DFB /* AudioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F86C234D8C1E00AA8DFB /* AudioModel.m */; };
+		45A4F870234DDA3F00AA8DFB /* AudioSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F86F234DDA3F00AA8DFB /* AudioSetUpViewController.m */; };
+		45A4F873234EC50400AA8DFB /* DYLeftSlipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F872234EC50400AA8DFB /* DYLeftSlipManager.m */; };
+		45A4F8762350104600AA8DFB /* AudioPlayTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F8752350104600AA8DFB /* AudioPlayTabbarView.m */; };
+		45A4F879235067C200AA8DFB /* AudioPlayingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F878235067C200AA8DFB /* AudioPlayingViewController.m */; };
+		45A4F87C235069A100AA8DFB /* AudioPlayingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F87B235069A100AA8DFB /* AudioPlayingView.m */; };
+		45A4F8802350A0C100AA8DFB /* AVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F87F2350A0C100AA8DFB /* AVPlayerManager.m */; };
+		45A4F8822350A49800AA8DFB /* 肖战, 王一博 - 无羁.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F8812350A49800AA8DFB /* 肖战, 王一博 - 无羁.flac */; };
+		45A4F8842350A4A000AA8DFB /* 肖战 - 曲尽陈情.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F8832350A4A000AA8DFB /* 肖战 - 曲尽陈情.flac */; };
+		45A4F8892353304300AA8DFB /* 于斌 - 赤子.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F8882353304300AA8DFB /* 于斌 - 赤子.flac */; };
+		45A4F88C235492CF00AA8DFB /* AVPlayerQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F88B235492CF00AA8DFB /* AVPlayerQueueManager.m */; };
+		45A4F88E23549E3700AA8DFB /* MusicSourceList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F88D23549E3700AA8DFB /* MusicSourceList.plist */; };
+		45A4F8912355994B00AA8DFB /* AVPlayerQueueObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A4F8902355994B00AA8DFB /* AVPlayerQueueObj.m */; };
+		45A4F8932356089500AA8DFB /* 刘海宽 - 不由.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F8922356089500AA8DFB /* 刘海宽 - 不由.flac */; };
+		45A4F8952356096700AA8DFB /* 银临 - 意难平.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F8942356096700AA8DFB /* 银临 - 意难平.flac */; };
+		45A4F8972356C47E00AA8DFB /* 汪卓成 - 恨别.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F8962356C47E00AA8DFB /* 汪卓成 - 恨别.flac */; };
+		45A4F8992356C50E00AA8DFB /* 周深 - 荒城渡.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F8982356C50E00AA8DFB /* 周深 - 荒城渡.flac */; };
+		45A4F89B2356C56900AA8DFB /* 陈卓璇, 孙伯纶 - 孤城.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F89A2356C56900AA8DFB /* 陈卓璇, 孙伯纶 - 孤城.flac */; };
+		45A4F89D2356E44400AA8DFB /* 醉雪, 郑繁星, 郭丞, 漆培鑫 - 最是少年不可欺.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F89C2356E44400AA8DFB /* 醉雪, 郑繁星, 郭丞, 漆培鑫 - 最是少年不可欺.flac */; };
+		45A4F89F2356E48D00AA8DFB /* 王一博 - 不忘.flac in Resources */ = {isa = PBXBuildFile; fileRef = 45A4F89E2356E48D00AA8DFB /* 王一博 - 不忘.flac */; };
+		45AA46082370204A00A97D0A /* LockScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AA46072370204A00A97D0A /* LockScreenViewController.m */; };
+		45B2FAC523B0E87700D69486 /* LocalMusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B2FAC423B0E87700D69486 /* LocalMusicModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45A4F833234C23E000AA8DFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A4F812234C23DF00AA8DFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45A4F819234C23DF00AA8DFB;
+			remoteInfo = IosPractice;
+		};
+		45A4F83E234C23E000AA8DFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A4F812234C23DF00AA8DFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45A4F819234C23DF00AA8DFB;
+			remoteInfo = IosPractice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21E141874B7F907A5063A349 /* Pods-IosPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosPractice.release.xcconfig"; path = "Target Support Files/Pods-IosPractice/Pods-IosPractice.release.xcconfig"; sourceTree = "<group>"; };
+		454790CB235D94C300F051B7 /* LocalMusicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalMusicViewController.h; sourceTree = "<group>"; };
+		454790CC235D94C300F051B7 /* LocalMusicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalMusicViewController.m; sourceTree = "<group>"; };
+		454790CE235DA16000F051B7 /* AVPlayerQueueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerQueueViewController.h; sourceTree = "<group>"; };
+		454790CF235DA16000F051B7 /* AVPlayerQueueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerQueueViewController.m; sourceTree = "<group>"; };
+		454790D1235DA1A900F051B7 /* AVPlayerQueueView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerQueueView.h; sourceTree = "<group>"; };
+		454790D2235DA1A900F051B7 /* AVPlayerQueueView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerQueueView.m; sourceTree = "<group>"; };
+		454790D4235FFEB700F051B7 /* AVPlayerModelObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerModelObj.h; sourceTree = "<group>"; };
+		454790D5235FFEB700F051B7 /* AVPlayerModelObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerModelObj.m; sourceTree = "<group>"; };
+		454790F52363329100F051B7 /* LocalMusicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalMusicView.h; sourceTree = "<group>"; };
+		454790F62363329100F051B7 /* LocalMusicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalMusicView.m; sourceTree = "<group>"; };
+		458285F1237297E900527859 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		458285F3237299AE00527859 /* 肖战 - 【魏无羡】曲尽陈情.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "肖战 - 【魏无羡】曲尽陈情.mp3"; sourceTree = "<group>"; };
+		458285F5237299B700527859 /* 肖战&王一博 - 【主题曲】无羁（合唱版）.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "肖战&王一博 - 【主题曲】无羁（合唱版）.mp3"; sourceTree = "<group>"; };
+		458285F723729E6600527859 /* 彭楚粤 _ 白澍 _ 肖战 _ 陈泽希 _ R1SE夏之光 - 流星雨 (Live).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "彭楚粤 _ 白澍 _ 肖战 _ 陈泽希 _ R1SE夏之光 - 流星雨 (Live).mp3"; sourceTree = "<group>"; };
+		45A4F81A234C23DF00AA8DFB /* IosPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45A4F81D234C23DF00AA8DFB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		45A4F81E234C23DF00AA8DFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		45A4F820234C23DF00AA8DFB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		45A4F821234C23DF00AA8DFB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		45A4F824234C23DF00AA8DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45A4F826234C23E000AA8DFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45A4F829234C23E000AA8DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45A4F82B234C23E000AA8DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45A4F82C234C23E000AA8DFB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45A4F832234C23E000AA8DFB /* IosPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45A4F836234C23E000AA8DFB /* IosPracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IosPracticeTests.m; sourceTree = "<group>"; };
+		45A4F838234C23E000AA8DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45A4F83D234C23E000AA8DFB /* IosPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45A4F841234C23E000AA8DFB /* IosPracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IosPracticeUITests.m; sourceTree = "<group>"; };
+		45A4F843234C23E000AA8DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45A4F84F234C8A4B00AA8DFB /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		45A4F851234CC0BA00AA8DFB /* FirstPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstPageViewController.h; sourceTree = "<group>"; };
+		45A4F852234CC0BA00AA8DFB /* FirstPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstPageViewController.m; sourceTree = "<group>"; };
+		45A4F85A234CCA6100AA8DFB /* VedioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VedioViewController.h; sourceTree = "<group>"; };
+		45A4F85B234CCA6100AA8DFB /* VedioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VedioViewController.m; sourceTree = "<group>"; };
+		45A4F85F234CCACA00AA8DFB /* AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
+		45A4F860234CCACA00AA8DFB /* AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
+		45A4F865234CCE4400AA8DFB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		45A4F867234D8BE100AA8DFB /* AudioView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioView.h; sourceTree = "<group>"; };
+		45A4F868234D8BE100AA8DFB /* AudioView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioView.m; sourceTree = "<group>"; };
+		45A4F86B234D8C1E00AA8DFB /* AudioModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioModel.h; sourceTree = "<group>"; };
+		45A4F86C234D8C1E00AA8DFB /* AudioModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioModel.m; sourceTree = "<group>"; };
+		45A4F86E234DDA3F00AA8DFB /* AudioSetUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioSetUpViewController.h; sourceTree = "<group>"; };
+		45A4F86F234DDA3F00AA8DFB /* AudioSetUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioSetUpViewController.m; sourceTree = "<group>"; };
+		45A4F871234EC4FA00AA8DFB /* DYLeftSlipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLeftSlipManager.h; sourceTree = "<group>"; };
+		45A4F872234EC50400AA8DFB /* DYLeftSlipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLeftSlipManager.m; sourceTree = "<group>"; };
+		45A4F8742350104600AA8DFB /* AudioPlayTabbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayTabbarView.h; sourceTree = "<group>"; };
+		45A4F8752350104600AA8DFB /* AudioPlayTabbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayTabbarView.m; sourceTree = "<group>"; };
+		45A4F877235067C200AA8DFB /* AudioPlayingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayingViewController.h; sourceTree = "<group>"; };
+		45A4F878235067C200AA8DFB /* AudioPlayingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayingViewController.m; sourceTree = "<group>"; };
+		45A4F87A235069A100AA8DFB /* AudioPlayingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioPlayingView.h; sourceTree = "<group>"; };
+		45A4F87B235069A100AA8DFB /* AudioPlayingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioPlayingView.m; sourceTree = "<group>"; };
+		45A4F87E2350A0C100AA8DFB /* AVPlayerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerManager.h; sourceTree = "<group>"; };
+		45A4F87F2350A0C100AA8DFB /* AVPlayerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerManager.m; sourceTree = "<group>"; };
+		45A4F8812350A49800AA8DFB /* 肖战, 王一博 - 无羁.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "肖战, 王一博 - 无羁.flac"; sourceTree = "<group>"; };
+		45A4F8832350A4A000AA8DFB /* 肖战 - 曲尽陈情.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "肖战 - 曲尽陈情.flac"; sourceTree = "<group>"; };
+		45A4F8882353304300AA8DFB /* 于斌 - 赤子.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "于斌 - 赤子.flac"; sourceTree = "<group>"; };
+		45A4F88A235492CF00AA8DFB /* AVPlayerQueueManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerQueueManager.h; sourceTree = "<group>"; };
+		45A4F88B235492CF00AA8DFB /* AVPlayerQueueManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerQueueManager.m; sourceTree = "<group>"; };
+		45A4F88D23549E3700AA8DFB /* MusicSourceList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MusicSourceList.plist; sourceTree = "<group>"; };
+		45A4F88F2355994B00AA8DFB /* AVPlayerQueueObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVPlayerQueueObj.h; sourceTree = "<group>"; };
+		45A4F8902355994B00AA8DFB /* AVPlayerQueueObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVPlayerQueueObj.m; sourceTree = "<group>"; };
+		45A4F8922356089500AA8DFB /* 刘海宽 - 不由.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "刘海宽 - 不由.flac"; sourceTree = "<group>"; };
+		45A4F8942356096700AA8DFB /* 银临 - 意难平.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "银临 - 意难平.flac"; sourceTree = "<group>"; };
+		45A4F8962356C47E00AA8DFB /* 汪卓成 - 恨别.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "汪卓成 - 恨别.flac"; sourceTree = "<group>"; };
+		45A4F8982356C50E00AA8DFB /* 周深 - 荒城渡.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "周深 - 荒城渡.flac"; sourceTree = "<group>"; };
+		45A4F89A2356C56900AA8DFB /* 陈卓璇, 孙伯纶 - 孤城.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "陈卓璇, 孙伯纶 - 孤城.flac"; sourceTree = "<group>"; };
+		45A4F89C2356E44400AA8DFB /* 醉雪, 郑繁星, 郭丞, 漆培鑫 - 最是少年不可欺.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "醉雪, 郑繁星, 郭丞, 漆培鑫 - 最是少年不可欺.flac"; sourceTree = "<group>"; };
+		45A4F89E2356E48D00AA8DFB /* 王一博 - 不忘.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "王一博 - 不忘.flac"; sourceTree = "<group>"; };
+		45AA46062370204A00A97D0A /* LockScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockScreenViewController.h; sourceTree = "<group>"; };
+		45AA46072370204A00A97D0A /* LockScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockScreenViewController.m; sourceTree = "<group>"; };
+		45B2FAC323B0E87700D69486 /* LocalMusicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalMusicModel.h; sourceTree = "<group>"; };
+		45B2FAC423B0E87700D69486 /* LocalMusicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalMusicModel.m; sourceTree = "<group>"; };
+		46311F937FABA1AC4F316571 /* Pods-IosPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosPractice.debug.xcconfig"; path = "Target Support Files/Pods-IosPractice/Pods-IosPractice.debug.xcconfig"; sourceTree = "<group>"; };
+		D1EB9CFD80185E27444DB4AC /* libPods-IosPractice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IosPractice.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45A4F817234C23DF00AA8DFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				458285F2237297E900527859 /* CoreTelephony.framework in Frameworks */,
+				38950866AAC80C9921A6785D /* libPods-IosPractice.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A4F82F234C23E000AA8DFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A4F83A234C23E000AA8DFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38DC5CA30BB119591FCA72C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46311F937FABA1AC4F316571 /* Pods-IosPractice.debug.xcconfig */,
+				21E141874B7F907A5063A349 /* Pods-IosPractice.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		458285F0237297E900527859 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				458285F1237297E900527859 /* CoreTelephony.framework */,
+				D1EB9CFD80185E27444DB4AC /* libPods-IosPractice.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45A4F811234C23DF00AA8DFB = {
+			isa = PBXGroup;
+			children = (
+				45A4F81C234C23DF00AA8DFB /* IosPractice */,
+				45A4F835234C23E000AA8DFB /* IosPracticeTests */,
+				45A4F840234C23E000AA8DFB /* IosPracticeUITests */,
+				45A4F81B234C23DF00AA8DFB /* Products */,
+				458285F0237297E900527859 /* Frameworks */,
+				38DC5CA30BB119591FCA72C0 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		45A4F81B234C23DF00AA8DFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F81A234C23DF00AA8DFB /* IosPractice.app */,
+				45A4F832234C23E000AA8DFB /* IosPracticeTests.xctest */,
+				45A4F83D234C23E000AA8DFB /* IosPracticeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45A4F81C234C23DF00AA8DFB /* IosPractice */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F854234CC0BF00AA8DFB /* FirstPage */,
+				45A4F81D234C23DF00AA8DFB /* AppDelegate.h */,
+				45A4F81E234C23DF00AA8DFB /* AppDelegate.m */,
+				45A4F820234C23DF00AA8DFB /* ViewController.h */,
+				45A4F821234C23DF00AA8DFB /* ViewController.m */,
+				45A4F865234CCE4400AA8DFB /* Constants.h */,
+				45A4F84F234C8A4B00AA8DFB /* loading.gif */,
+				45A4F823234C23DF00AA8DFB /* Main.storyboard */,
+				45A4F826234C23E000AA8DFB /* Assets.xcassets */,
+				45A4F828234C23E000AA8DFB /* LaunchScreen.storyboard */,
+				45A4F82B234C23E000AA8DFB /* Info.plist */,
+				45A4F82C234C23E000AA8DFB /* main.m */,
+				45A4F871234EC4FA00AA8DFB /* DYLeftSlipManager.h */,
+				45A4F872234EC50400AA8DFB /* DYLeftSlipManager.m */,
+			);
+			path = IosPractice;
+			sourceTree = "<group>";
+		};
+		45A4F835234C23E000AA8DFB /* IosPracticeTests */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F836234C23E000AA8DFB /* IosPracticeTests.m */,
+				45A4F838234C23E000AA8DFB /* Info.plist */,
+			);
+			path = IosPracticeTests;
+			sourceTree = "<group>";
+		};
+		45A4F840234C23E000AA8DFB /* IosPracticeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F841234C23E000AA8DFB /* IosPracticeUITests.m */,
+				45A4F843234C23E000AA8DFB /* Info.plist */,
+			);
+			path = IosPracticeUITests;
+			sourceTree = "<group>";
+		};
+		45A4F854234CC0BF00AA8DFB /* FirstPage */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F855234CC8C500AA8DFB /* Vedio */,
+				45A4F856234CC8D900AA8DFB /* Audio */,
+				45A4F851234CC0BA00AA8DFB /* FirstPageViewController.h */,
+				45A4F852234CC0BA00AA8DFB /* FirstPageViewController.m */,
+			);
+			path = FirstPage;
+			sourceTree = "<group>";
+		};
+		45A4F855234CC8C500AA8DFB /* Vedio */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F859234CCA2F00AA8DFB /* view */,
+				45A4F858234CCA2900AA8DFB /* model */,
+				45A4F857234CCA1F00AA8DFB /* controller */,
+			);
+			path = Vedio;
+			sourceTree = "<group>";
+		};
+		45A4F856234CC8D900AA8DFB /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				45B2FAC623B0F33700D69486 /* FindVedio */,
+				45B2FABC23B0E7B100D69486 /* LocalMusic */,
+				45B2FABA23B0E77000D69486 /* MainScreen */,
+				45A4F87D23509D6500AA8DFB /* Source */,
+				45A4F86A234D8BFF00AA8DFB /* Model */,
+				45A4F866234D875800AA8DFB /* View */,
+				45A4F85D234CCA8A00AA8DFB /* controller */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		45A4F857234CCA1F00AA8DFB /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F85A234CCA6100AA8DFB /* VedioViewController.h */,
+				45A4F85B234CCA6100AA8DFB /* VedioViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		45A4F858234CCA2900AA8DFB /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		45A4F859234CCA2F00AA8DFB /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		45A4F85D234CCA8A00AA8DFB /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F85F234CCACA00AA8DFB /* AudioViewController.h */,
+				45A4F860234CCACA00AA8DFB /* AudioViewController.m */,
+				45A4F86E234DDA3F00AA8DFB /* AudioSetUpViewController.h */,
+				45A4F86F234DDA3F00AA8DFB /* AudioSetUpViewController.m */,
+				45A4F877235067C200AA8DFB /* AudioPlayingViewController.h */,
+				45A4F878235067C200AA8DFB /* AudioPlayingViewController.m */,
+				454790CE235DA16000F051B7 /* AVPlayerQueueViewController.h */,
+				454790CF235DA16000F051B7 /* AVPlayerQueueViewController.m */,
+				45AA46062370204A00A97D0A /* LockScreenViewController.h */,
+				45AA46072370204A00A97D0A /* LockScreenViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		45A4F866234D875800AA8DFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F867234D8BE100AA8DFB /* AudioView.h */,
+				45A4F868234D8BE100AA8DFB /* AudioView.m */,
+				45A4F8742350104600AA8DFB /* AudioPlayTabbarView.h */,
+				45A4F8752350104600AA8DFB /* AudioPlayTabbarView.m */,
+				45A4F87A235069A100AA8DFB /* AudioPlayingView.h */,
+				45A4F87B235069A100AA8DFB /* AudioPlayingView.m */,
+				454790D1235DA1A900F051B7 /* AVPlayerQueueView.h */,
+				454790D2235DA1A900F051B7 /* AVPlayerQueueView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45A4F86A234D8BFF00AA8DFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F86B234D8C1E00AA8DFB /* AudioModel.h */,
+				45A4F86C234D8C1E00AA8DFB /* AudioModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45A4F87D23509D6500AA8DFB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				45A4F8812350A49800AA8DFB /* 肖战, 王一博 - 无羁.flac */,
+				45A4F8832350A4A000AA8DFB /* 肖战 - 曲尽陈情.flac */,
+				45A4F8882353304300AA8DFB /* 于斌 - 赤子.flac */,
+				45A4F8922356089500AA8DFB /* 刘海宽 - 不由.flac */,
+				45A4F8942356096700AA8DFB /* 银临 - 意难平.flac */,
+				45A4F8962356C47E00AA8DFB /* 汪卓成 - 恨别.flac */,
+				45A4F8982356C50E00AA8DFB /* 周深 - 荒城渡.flac */,
+				45A4F89A2356C56900AA8DFB /* 陈卓璇, 孙伯纶 - 孤城.flac */,
+				45A4F89C2356E44400AA8DFB /* 醉雪, 郑繁星, 郭丞, 漆培鑫 - 最是少年不可欺.flac */,
+				45A4F89E2356E48D00AA8DFB /* 王一博 - 不忘.flac */,
+				458285F3237299AE00527859 /* 肖战 - 【魏无羡】曲尽陈情.mp3 */,
+				458285F5237299B700527859 /* 肖战&王一博 - 【主题曲】无羁（合唱版）.mp3 */,
+				458285F723729E6600527859 /* 彭楚粤 _ 白澍 _ 肖战 _ 陈泽希 _ R1SE夏之光 - 流星雨 (Live).mp3 */,
+				45A4F88D23549E3700AA8DFB /* MusicSourceList.plist */,
+				45A4F87E2350A0C100AA8DFB /* AVPlayerManager.h */,
+				45A4F87F2350A0C100AA8DFB /* AVPlayerManager.m */,
+				45A4F88A235492CF00AA8DFB /* AVPlayerQueueManager.h */,
+				45A4F88B235492CF00AA8DFB /* AVPlayerQueueManager.m */,
+				45A4F88F2355994B00AA8DFB /* AVPlayerQueueObj.h */,
+				45A4F8902355994B00AA8DFB /* AVPlayerQueueObj.m */,
+				454790D4235FFEB700F051B7 /* AVPlayerModelObj.h */,
+				454790D5235FFEB700F051B7 /* AVPlayerModelObj.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		45B2FABA23B0E77000D69486 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		45B2FABC23B0E7B100D69486 /* LocalMusic */ = {
+			isa = PBXGroup;
+			children = (
+				45B2FABF23B0E7E700D69486 /* Model */,
+				45B2FABE23B0E7D500D69486 /* Controller */,
+				45B2FABD23B0E7C100D69486 /* View */,
+			);
+			path = LocalMusic;
+			sourceTree = "<group>";
+		};
+		45B2FABD23B0E7C100D69486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				454790F52363329100F051B7 /* LocalMusicView.h */,
+				454790F62363329100F051B7 /* LocalMusicView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45B2FABE23B0E7D500D69486 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				454790CB235D94C300F051B7 /* LocalMusicViewController.h */,
+				454790CC235D94C300F051B7 /* LocalMusicViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45B2FABF23B0E7E700D69486 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45B2FAC323B0E87700D69486 /* LocalMusicModel.h */,
+				45B2FAC423B0E87700D69486 /* LocalMusicModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45B2FAC623B0F33700D69486 /* FindVedio */ = {
+			isa = PBXGroup;
+			children = (
+				45B2FAC823B0F83400D69486 /* View */,
+				45B2FAC923B0F91900D69486 /* ViewModel */,
+				45B2FAC723B0F82C00D69486 /* Model */,
+			);
+			path = FindVedio;
+			sourceTree = "<group>";
+		};
+		45B2FAC723B0F82C00D69486 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45B2FAC823B0F83400D69486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45B2FAC923B0F91900D69486 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45A4F819234C23DF00AA8DFB /* IosPractice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45A4F846234C23E000AA8DFB /* Build configuration list for PBXNativeTarget "IosPractice" */;
+			buildPhases = (
+				E07CB4FDE2F10B612A3C1B9E /* [CP] Check Pods Manifest.lock */,
+				45A4F816234C23DF00AA8DFB /* Sources */,
+				45A4F817234C23DF00AA8DFB /* Frameworks */,
+				45A4F818234C23DF00AA8DFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IosPractice;
+			productName = IosPractice;
+			productReference = 45A4F81A234C23DF00AA8DFB /* IosPractice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45A4F831234C23E000AA8DFB /* IosPracticeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45A4F849234C23E000AA8DFB /* Build configuration list for PBXNativeTarget "IosPracticeTests" */;
+			buildPhases = (
+				45A4F82E234C23E000AA8DFB /* Sources */,
+				45A4F82F234C23E000AA8DFB /* Frameworks */,
+				45A4F830234C23E000AA8DFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45A4F834234C23E000AA8DFB /* PBXTargetDependency */,
+			);
+			name = IosPracticeTests;
+			productName = IosPracticeTests;
+			productReference = 45A4F832234C23E000AA8DFB /* IosPracticeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		45A4F83C234C23E000AA8DFB /* IosPracticeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45A4F84C234C23E000AA8DFB /* Build configuration list for PBXNativeTarget "IosPracticeUITests" */;
+			buildPhases = (
+				45A4F839234C23E000AA8DFB /* Sources */,
+				45A4F83A234C23E000AA8DFB /* Frameworks */,
+				45A4F83B234C23E000AA8DFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45A4F83F234C23E000AA8DFB /* PBXTargetDependency */,
+			);
+			name = IosPracticeUITests;
+			productName = IosPracticeUITests;
+			productReference = 45A4F83D234C23E000AA8DFB /* IosPracticeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45A4F812234C23DF00AA8DFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Yin;
+				TargetAttributes = {
+					45A4F819234C23DF00AA8DFB = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					45A4F831234C23E000AA8DFB = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 45A4F819234C23DF00AA8DFB;
+					};
+					45A4F83C234C23E000AA8DFB = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 45A4F819234C23DF00AA8DFB;
+					};
+				};
+			};
+			buildConfigurationList = 45A4F815234C23DF00AA8DFB /* Build configuration list for PBXProject "IosPractice" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45A4F811234C23DF00AA8DFB;
+			productRefGroup = 45A4F81B234C23DF00AA8DFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45A4F819234C23DF00AA8DFB /* IosPractice */,
+				45A4F831234C23E000AA8DFB /* IosPracticeTests */,
+				45A4F83C234C23E000AA8DFB /* IosPracticeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45A4F818234C23DF00AA8DFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A4F8992356C50E00AA8DFB /* 周深 - 荒城渡.flac in Resources */,
+				458285F6237299B700527859 /* 肖战&王一博 - 【主题曲】无羁（合唱版）.mp3 in Resources */,
+				45A4F8822350A49800AA8DFB /* 肖战, 王一博 - 无羁.flac in Resources */,
+				45A4F82A234C23E000AA8DFB /* LaunchScreen.storyboard in Resources */,
+				45A4F8892353304300AA8DFB /* 于斌 - 赤子.flac in Resources */,
+				45A4F850234C8A4B00AA8DFB /* loading.gif in Resources */,
+				45A4F8952356096700AA8DFB /* 银临 - 意难平.flac in Resources */,
+				45A4F8842350A4A000AA8DFB /* 肖战 - 曲尽陈情.flac in Resources */,
+				45A4F89D2356E44400AA8DFB /* 醉雪, 郑繁星, 郭丞, 漆培鑫 - 最是少年不可欺.flac in Resources */,
+				458285F4237299AE00527859 /* 肖战 - 【魏无羡】曲尽陈情.mp3 in Resources */,
+				45A4F8932356089500AA8DFB /* 刘海宽 - 不由.flac in Resources */,
+				45A4F88E23549E3700AA8DFB /* MusicSourceList.plist in Resources */,
+				458285F823729E6600527859 /* 彭楚粤 _ 白澍 _ 肖战 _ 陈泽希 _ R1SE夏之光 - 流星雨 (Live).mp3 in Resources */,
+				45A4F827234C23E000AA8DFB /* Assets.xcassets in Resources */,
+				45A4F89F2356E48D00AA8DFB /* 王一博 - 不忘.flac in Resources */,
+				45A4F825234C23DF00AA8DFB /* Main.storyboard in Resources */,
+				45A4F89B2356C56900AA8DFB /* 陈卓璇, 孙伯纶 - 孤城.flac in Resources */,
+				45A4F8972356C47E00AA8DFB /* 汪卓成 - 恨别.flac in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A4F830234C23E000AA8DFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A4F83B234C23E000AA8DFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E07CB4FDE2F10B612A3C1B9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IosPractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45A4F816234C23DF00AA8DFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A4F853234CC0BA00AA8DFB /* FirstPageViewController.m in Sources */,
+				45A4F8762350104600AA8DFB /* AudioPlayTabbarView.m in Sources */,
+				454790D6235FFEB700F051B7 /* AVPlayerModelObj.m in Sources */,
+				45A4F869234D8BE100AA8DFB /* AudioView.m in Sources */,
+				45A4F86D234D8C1E00AA8DFB /* AudioModel.m in Sources */,
+				45B2FAC523B0E87700D69486 /* LocalMusicModel.m in Sources */,
+				45A4F88C235492CF00AA8DFB /* AVPlayerQueueManager.m in Sources */,
+				45A4F822234C23DF00AA8DFB /* ViewController.m in Sources */,
+				45A4F85C234CCA6100AA8DFB /* VedioViewController.m in Sources */,
+				454790D0235DA16000F051B7 /* AVPlayerQueueViewController.m in Sources */,
+				454790CD235D94C300F051B7 /* LocalMusicViewController.m in Sources */,
+				45AA46082370204A00A97D0A /* LockScreenViewController.m in Sources */,
+				45A4F82D234C23E000AA8DFB /* main.m in Sources */,
+				45A4F8912355994B00AA8DFB /* AVPlayerQueueObj.m in Sources */,
+				45A4F81F234C23DF00AA8DFB /* AppDelegate.m in Sources */,
+				45A4F879235067C200AA8DFB /* AudioPlayingViewController.m in Sources */,
+				454790D3235DA1A900F051B7 /* AVPlayerQueueView.m in Sources */,
+				45A4F873234EC50400AA8DFB /* DYLeftSlipManager.m in Sources */,
+				45A4F87C235069A100AA8DFB /* AudioPlayingView.m in Sources */,
+				454790F72363329100F051B7 /* LocalMusicView.m in Sources */,
+				45A4F8802350A0C100AA8DFB /* AVPlayerManager.m in Sources */,
+				45A4F870234DDA3F00AA8DFB /* AudioSetUpViewController.m in Sources */,
+				45A4F861234CCACA00AA8DFB /* AudioViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A4F82E234C23E000AA8DFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A4F837234C23E000AA8DFB /* IosPracticeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45A4F839234C23E000AA8DFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A4F842234C23E000AA8DFB /* IosPracticeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45A4F834234C23E000AA8DFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45A4F819234C23DF00AA8DFB /* IosPractice */;
+			targetProxy = 45A4F833234C23E000AA8DFB /* PBXContainerItemProxy */;
+		};
+		45A4F83F234C23E000AA8DFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45A4F819234C23DF00AA8DFB /* IosPractice */;
+			targetProxy = 45A4F83E234C23E000AA8DFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45A4F823234C23DF00AA8DFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A4F824234C23DF00AA8DFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45A4F828234C23E000AA8DFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45A4F829234C23E000AA8DFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45A4F844234C23E000AA8DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		45A4F845234C23E000AA8DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45A4F847234C23E000AA8DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46311F937FABA1AC4F316571 /* Pods-IosPractice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8387SUL6JM;
+				INFOPLIST_FILE = IosPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ios.Yin.IosPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45A4F848234C23E000AA8DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21E141874B7F907A5063A349 /* Pods-IosPractice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8387SUL6JM;
+				INFOPLIST_FILE = IosPractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ios.Yin.IosPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		45A4F84A234C23E000AA8DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosPracticeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ios.Yin.IosPracticeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IosPractice.app/IosPractice";
+			};
+			name = Debug;
+		};
+		45A4F84B234C23E000AA8DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosPracticeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ios.Yin.IosPracticeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IosPractice.app/IosPractice";
+			};
+			name = Release;
+		};
+		45A4F84D234C23E000AA8DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosPracticeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ios.Yin.IosPracticeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IosPractice;
+			};
+			name = Debug;
+		};
+		45A4F84E234C23E000AA8DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosPracticeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ios.Yin.IosPracticeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IosPractice;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45A4F815234C23DF00AA8DFB /* Build configuration list for PBXProject "IosPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A4F844234C23E000AA8DFB /* Debug */,
+				45A4F845234C23E000AA8DFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45A4F846234C23E000AA8DFB /* Build configuration list for PBXNativeTarget "IosPractice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A4F847234C23E000AA8DFB /* Debug */,
+				45A4F848234C23E000AA8DFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45A4F849234C23E000AA8DFB /* Build configuration list for PBXNativeTarget "IosPracticeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A4F84A234C23E000AA8DFB /* Debug */,
+				45A4F84B234C23E000AA8DFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45A4F84C234C23E000AA8DFB /* Build configuration list for PBXNativeTarget "IosPracticeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A4F84D234C23E000AA8DFB /* Debug */,
+				45A4F84E234C23E000AA8DFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45A4F812234C23DF00AA8DFB /* Project object */;
+}

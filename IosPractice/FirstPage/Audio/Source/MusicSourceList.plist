@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>songID</key>
+		<integer>5</integer>
+		<key>name</key>
+		<string>恨别</string>
+		<key>path</key>
+		<string>汪卓成 - 恨别.flac</string>
+		<key>image</key>
+		<string>songImage_6.jpg</string>
+		<key>singer</key>
+		<string>汪卓成</string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>11</integer>
+		<key>name</key>
+		<string>彭楚粤 _ 白澍 _ 肖战 _ 陈泽希</string>
+		<key>path</key>
+		<string>彭楚粤 _ 白澍 _ 肖战 _ 陈泽希 _ R1SE夏之光 - 流星雨 (Live).mp3</string>
+		<key>image</key>
+		<string></string>
+		<key>singer</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>4</integer>
+		<key>name</key>
+		<string>意难平</string>
+		<key>path</key>
+		<string>银临 - 意难平.flac</string>
+		<key>image</key>
+		<string>songImage_5.jpg</string>
+		<key>singer</key>
+		<string>银临</string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>3</integer>
+		<key>name</key>
+		<string>不由</string>
+		<key>path</key>
+		<string>刘海宽 - 不由.flac</string>
+		<key>image</key>
+		<string>songImage_4.jpg</string>
+		<key>singer</key>
+		<string>刘海宽</string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>曲尽陈情</string>
+		<key>path</key>
+		<string>肖战 - 【魏无羡】曲尽陈情.mp3</string>
+		<key>image</key>
+		<string>songImage_1.jpg</string>
+		<key>singer</key>
+		<string>肖战</string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>无羁</string>
+		<key>path</key>
+		<string>肖战&amp;王一博 - 【主题曲】无羁（合唱版）.mp3</string>
+		<key>image</key>
+		<string>songImage_2.jpg</string>
+		<key>singer</key>
+		<string>肖战，王一博</string>
+	</dict>
+	<dict>
+		<key>sibgID</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>赤子</string>
+		<key>path</key>
+		<string>于斌 - 赤子.flac</string>
+		<key>image</key>
+		<string>songImage_3.jpg</string>
+		<key>singer</key>
+		<string>于斌</string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>6</integer>
+		<key>name</key>
+		<string>荒城渡</string>
+		<key>path</key>
+		<string>周深 - 荒城渡.flac</string>
+		<key>image</key>
+		<string>songImage_7.jpg</string>
+		<key>singer</key>
+		<string>周深</string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>7</integer>
+		<key>name</key>
+		<string>孤城</string>
+		<key>path</key>
+		<string>陈卓璇, 孙伯纶 - 孤城.flac</string>
+		<key>image</key>
+		<string>songImage_8.jpg</string>
+		<key>singer</key>
+		<string>陈卓璇, 孙伯纶</string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>8</integer>
+		<key>name</key>
+		<string>最是少年不可欺</string>
+		<key>path</key>
+		<string>醉雪, 郑繁星, 郭丞, 漆培鑫 - 最是少年不可欺.flac</string>
+		<key>image</key>
+		<string>songImage_9.jpg</string>
+		<key>singer</key>
+		<string>醉雪, 郑繁星, 郭丞, 漆培鑫</string>
+	</dict>
+	<dict>
+		<key>songID</key>
+		<integer>7</integer>
+		<key>name</key>
+		<string>不忘</string>
+		<key>path</key>
+		<string>王一博 - 不忘.flac</string>
+		<key>image</key>
+		<string>songImage_10.jpg</string>
+		<key>singer</key>
+		<string>王一博</string>
+	</dict>
+</array>
+</plist>
