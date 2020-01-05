@@ -119,8 +119,8 @@
     // 3.设置展示的信息
     NSMutableDictionary *playingInfo = [NSMutableDictionary dictionary];
     
-    playingInfo[MPMediaItemPropertyAlbumTitle] = @"aaa";
-    playingInfo[MPMediaItemPropertyArtist] = @"aaa";
+    playingInfo[MPMediaItemPropertyAlbumTitle] = @"asd";
+    playingInfo[MPMediaItemPropertyArtist] = @"qwr";
     MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"icon1.png"]];
     playingInfo[MPMediaItemPropertyArtwork] = artwork;
 //    playingInfo[MPMediaItemPropertyArtist] = @(self.player.currentTime);
