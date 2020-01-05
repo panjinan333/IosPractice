@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AVPlayerManager : NSObject
 
 + (instancetype)sharedManager;
+- (void)removePlayer;//移除播放器
 
 @property (nonatomic, strong) AVPlayer * player;
 @property (nonatomic, strong) AVPlayerItem * playerItem;
@@ -27,13 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)pauseSong;
 - (void)previousSong;
 - (void)nextSong;
+
 - (NSString *)durationOfSong;
 - (NSString *)currentTimeOfSong;
 - (double)currentProgressOfSong;
 - (void)palySongAtOneTime:(CMTime)timePoint;
 
 //@property (nonatomic, strong) CTCallCenter *callCenter ;
-- (void)removePlayer;//移除播放器
+
 @end
 
 NS_ASSUME_NONNULL_END

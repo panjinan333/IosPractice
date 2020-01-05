@@ -18,13 +18,7 @@ static dispatch_once_t onceToken;
 + (instancetype)sharedManager {
 //    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[AVPlayerManager alloc] init];
-        //    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-        //    [[AVAudioSession sharedInstance] setActive:YES error:nil];
-        AVAudioSession * session = [AVAudioSession sharedInstance];
-        [session setCategory:AVAudioSessionCategoryPlayAndRecord
-                 withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker
-                       error:nil];
+        instance = [[AVPlayerManager alloc] init];        
     });
     //防止子类使用
 //    if (![NSStringFromClass([self class]) isEqualToString:@"SCBLoadingShareView"]) {
@@ -43,12 +37,17 @@ static dispatch_once_t onceToken;
 }
 
 #pragma mark - play manage
-
+//- (void)playSongWithItem:(AVPlayerQueueObj *)item{
+//    NSURL * url = [NSURL fileURLWithPath:[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:item.song_path]];
+//    AVPlayerItem * playerItem = [AVPlayerItem playerItemWithURL:url];
+//    self.player = [AVPlayer playerWithPlayerItem:playerItem];
+//    [playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+//}
 - (void)playSongWithItem:(AVPlayerQueueObj *)item{
     //与当前播放进行比对，不一样则换歌
     AVPlayerQueueObj * current = [[AVPlayerQueueManager sharedManager] currentPlayingMusic];
-    NSLog(@"******dang   %ld",(long)current.song_id);
-    NSLog(@"******zhuan  %ld",(long)item.song_id);
+    NSLog(@"******当前：%ld",(long)current.song_id);
+    NSLog(@"******专辑：%ld",(long)item.song_id);
 //    if( current.song_id != item.song_id ){
         //    //从文件中读取
         //    NSString * source = [[NSBundle mainBundle] pathForResource:@"MusicSourceList" ofType:@"plist"];
@@ -78,21 +77,28 @@ static dispatch_once_t onceToken;
     
         [self.playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];//监听status属性（媒体加载状态）
         [self.playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];// 监听loadedTimeRanges属性//监听缓冲进度
-
-        // 缓冲区空了，需要等待数据
-        //    [playerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];
+        [self.playerItem addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil];// 缓冲区空了，需要等待数据
         //playbackLikelyToKeepUp和playbackBufferEmpty是一对，用于监听缓存足够播放的状态
-        //    [playerItem addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil]
-        
-        ////播放完成
-        //    AVPlayerItemDidPlayToEndTimeNotification
-        //    //播放失败
-        //    AVPlayerItemFailedToPlayToEndTimeNotification
-        //    //异常中断
-        //    AVPlayerItemPlaybackStalledNotification
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:playerItem];
-        //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:songItem];
+        [self.playerItem addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
+
+    
+    /*
+     监听
+     AVF_EXPORT NSString *const AVPlayerItemTimeJumpedNotification             NS_AVAILABLE(10_7, 5_0);    // the item's current time has changed discontinuously
+     //播放失败
+     AVF_EXPORT NSString *const AVPlayerItemFailedToPlayToEndTimeNotification NS_AVAILABLE(10_7, 4_3);   // item has failed to play to its end time
+     //异常中断
+     AVF_EXPORT NSString *const AVPlayerItemPlaybackStalledNotification       NS_AVAILABLE(10_9, 6_0);    // media did not arrive in time to continue playback
+     AVF_EXPORT NSString *const AVPlayerItemNewAccessLogEntryNotification     NS_AVAILABLE(10_9, 6_0);    // a new access log entry has been added
+     AVF_EXPORT NSString *const AVPlayerItemNewErrorLogEntryNotification         NS_AVAILABLE(10_9, 6_0);    // a new error log entry has been added
+     
+     // notification userInfo key                                                                    type
+     AVF_EXPORT NSString *const AVPlayerItemFailedToPlayToEndTimeErrorKey     NS_AVAILABLE(10_7, 4_3);   // NSError
+     */
+    
+    //item播放结束
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:playerItem];
+   
 //        NSLog(@"前-状态：%f",self.player.rate);
     
     [self configPlayingInfo];
@@ -103,8 +109,6 @@ static dispatch_once_t onceToken;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMainViewNSNotification" object:nil];
     
 //    }
-
- 
     
     /// 添加监听.以及回调
 //    __weak typeof(self) weakSelf = self;
@@ -112,6 +116,19 @@ static dispatch_once_t onceToken;
 //        /// 更新播放进度
 ////        [weakSelf updateProgress];
 //    }];
+//    拖拽方法如下：
+//
+//    - (IBAction)playerSliderValueChanged:(id)sender {
+//        _isSliding = YES;
+//        [self pause];    // 跳转到拖拽秒处
+//        // self.playProgress.maxValue = value / timeScale
+//        // value = progress.value * timeScale
+//        // CMTimemake(value, timeScale) =  (progress.value, 1.0)
+//        CMTime changedTime = CMTimeMakeWithSeconds(self.playProgress.value, 1.0);
+//        [_playerItem seekToTime:changedTime completionHandler:^(BOOL finished) {
+//            // 跳转完成后
+//        }];
+//    }
     /*
     __weak typeof(self)WeakSelf = self;
     __strong typeof(WeakSelf) strongSelf = WeakSelf;
@@ -191,38 +208,38 @@ static dispatch_once_t onceToken;
 //    UIApplicationDidBecomeActiveNotification
     
 }
-
-- (void)moviePlayDidEnd:(NSNotification *)notification{
-    //视频播放完毕操作
-    
-    NSLog(@"正常 播放结束");
-    //移除本身监听，通知
-    [self.playerItem removeObserver:self forKeyPath:@"status"];
-    [self.playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-    //播放下一曲，并发送一个新的通知
-    [self nextSong];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMusicViewNSNotification" object:nil];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMainViewNSNotification" object:nil];
-}
-
-//- (void)playbackFinished:(NSNotification *)notice {
-//    BASE_INFO_FUN(@"播放完成");
-//    [self playNext];
+//// 观察播放进度
+//- (void)monitoringPlayback:(AVPlayerItem *)item {
+//    __weak typeof(self)WeakSelf = self;
+//
+//    // 观察间隔, CMTime 为30分之一秒
+//    _playTimeObserver = [_player addPeriodicTimeObserverForInterval:CMTimeMake(1, 30.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+//        if (_touchMode != TouchPlayerViewModeHorizontal) {
+//            // 获取 item 当前播放秒
+//            float currentPlayTime = (double)item.currentTime.value/ item.currentTime.timescale;
+//            // 更新slider, 如果正在滑动则不更新
+//            if (_isSliding == NO) {
+//                [WeakSelf updateVideoSlider:currentPlayTime];
+//            }
+//        } else {
+//            return;
+//        }
+//    }];
 //}
+//注意： 给 palyer 添加了 timeObserver 后，不使用的时候记得移除 removeTimeObserver 否则会占用大量内存。
 
-//- (void)playSongWithItem:(AVPlayerQueueObj *)item{
-//    NSURL * url = [NSURL fileURLWithPath:[[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:item.song_path]];
-//    AVPlayerItem * playerItem = [AVPlayerItem playerItemWithURL:url];
-//    self.player = [AVPlayer playerWithPlayerItem:playerItem];
-//    [playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-//}
-
+//比如，我在dealloc里面做了移除：
+//
+//- (void)dealloc {
+//    [self removeObserveAndNOtification];
+//    [_player removeTimeObserver:_playTimeObserver]; // 移除playTimeObserver}
 - (void)pauseSong{
-//    NSLog(@"暂停qian断点:%@",[self currentTimeOfSong]);
-    [self.player pause];
-//    NSLog(@"暂停hou断点:%@",[self currentTimeOfSong]);
+    //    NSLog(@"暂停qian断点:%@",[self currentTimeOfSong]);
+    if(self.player.rate != 0.0){
+        //播放中，才会变暂停
+        [self.player pause];
+    }
+    //    NSLog(@"暂停hou断点:%@",[self currentTimeOfSong]);
 }
 
 - (void)previousSong{
@@ -241,6 +258,25 @@ static dispatch_once_t onceToken;
     [self playSongWithItem:item];
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMusicViewNSNotification" object:nil];
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMainViewNSNotification" object:nil];
+}
+
+#pragma mark - 监听
+
+- (void)playDidEnd:(NSNotification *)notification{
+    //播放完毕操作
+    //确保在清理内存和视图期间将他们注销
+    NSLog(@"正常 播放结束");
+    //移除本身监听，通知
+    [self.playerItem removeObserver:self forKeyPath:@"status"];
+    [self.playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
+    [self.playerItem removeObserver:self forKeyPath:@"playbackBufferEmpty"];
+    [self.playerItem removeObserver:self forKeyPath:@"playbackLikelyToKeepUp"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    //播放下一曲，并发送一个新的通知
+    [self nextSong];
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMusicViewNSNotification" object:nil];
+    //    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMainViewNSNotification" object:nil];
 }
 
 - (void)removeObserverBeforePlay{
@@ -275,27 +311,40 @@ static dispatch_once_t onceToken;
     //加上歌曲判断 不然返回nan
     CMTime totalTime = self.playerItem.asset.duration;
     Float64 time = CMTimeGetSeconds(totalTime);
+    NSLog(@"总秒：%f",time);
     int minute = (int)(time+1)/60;
     int second = (int)(time+1)%60;
-    NSLog(@"总时间:%d",(int)time+1);
-    return [NSString stringWithFormat:@"%d",(int)time+1];
-//    return [NSString stringWithFormat:@"%02d:%02d",minute, second];
+//    NSLog(@"总时间:%d",(int)time+1);
+//    return [NSString stringWithFormat:@"%d",(int)time+1];
+    return [NSString stringWithFormat:@"%02d:%02d",minute, second];
 }
 
 - (NSString *)currentTimeOfSong{
-    
+//    [self durationOfSong];
     CMTime currentTime = self.player.currentItem.currentTime;
-    
-    
 //    NSTimeInterval currentTimeSec = time.value / time.timescale;
 //    CMTime currentTime = self.player.currentItem.duration;
     
     Float64 time = CMTimeGetSeconds(currentTime);
-    int minute = (int)(time+1)/60;
-    int second = (int)(time+1)%60;
-    NSLog(@"当前时间:%d",(int)time+1);
-    return [NSString stringWithFormat:@"%d",(int)time+1];
-//    return [NSString stringWithFormat:@"%02d:%02d",minute, second];
+    
+    NSLog(@"当前秒：%f",time);
+//    CMTime totalTime = self.playerItem.asset.duration;
+    CMTime totalTime = self.playerItem.duration;
+    Float64 time1 = CMTimeGetSeconds(totalTime);
+    NSLog(@"总的秒：%f",time1);
+    
+    int minute,second;
+    if(time == 0.000000){
+        //item开始的一瞬间
+        minute = 0;
+        second = 0;
+    }else{
+        minute = (int)(time+1)/60;
+        second = (int)(time+1)%60;
+    }
+//    NSLog(@"当前时间:%d",(int)time+1);
+//    return [NSString stringWithFormat:@"%d",(int)time+1];
+    return [NSString stringWithFormat:@"%02d:%02d",minute, second];
 }
 
 - (double)currentProgressOfSong{
@@ -322,7 +371,9 @@ static dispatch_once_t onceToken;
                 [self.player play];
                 
                 NSLog(@"后-状态：%f",self.player.rate);
-                
+                //        //获取视频的总播放时长
+                //        self.total = CMTimeGetSeconds(self.avPlayer.currentItem.duration);
+
                 //播放界面状态更新
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"changeMusicStateNSNotification" object:nil];
                 //主窗口状态更新
@@ -334,23 +385,46 @@ static dispatch_once_t onceToken;
             case AVPlayerStatusFailed:
                 [self.player pause];
                 NSLog(@"播放失败");
-//                BASE_INFO_FUN(@"KVO：加载失败，网络或者服务器出现问题");
                 break;
             default:
                 break;
         }
     }
     if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
-        NSArray *timeRanges = (NSArray *)[change objectForKey:NSKeyValueChangeNewKey];
-        [self updateLoadedTimeRanges:timeRanges];
+        //获取缓冲进度
+        NSArray * loadedTimeRanges = (NSArray *)[change objectForKey:NSKeyValueChangeNewKey];
+//        NSArray * loadedTimeRanges = [playerItem loadedTimeRanges];
+        //        NSArray * array = songItem.loadedTimeRanges;
+
+//         获取缓冲区域 //本次缓冲的时间范围
+            CMTimeRange timeRange = [loadedTimeRanges.firstObject CMTimeRangeValue];
+        //        CMTimeRange timeRange = [array.firstObject CMTimeRangeValue];
+
+            //开始的时间
+            NSTimeInterval startSeconds = CMTimeGetSeconds(timeRange.start);
+            //表示已经缓冲的时间
+            NSTimeInterval durationSeconds = CMTimeGetSeconds(timeRange.duration);
+            // 计算缓冲总时间
+            NSTimeInterval result = startSeconds + durationSeconds;
+            NSLog(@"开始:%f,持续:%f,总时间:%f", startSeconds, durationSeconds, result);
+//            NSLog(@"视频的加载进度是:%%%f", durationSeconds / self.total * 100);
+        
+
+        if (loadedTimeRanges && [loadedTimeRanges count]) {
+            CMTime bufferDuration = CMTimeAdd(timeRange.start, timeRange.duration);
+            // 获取到缓冲的时间,然后除以总时间,得到缓冲的进度
+            NSLog(@"缓冲%f",CMTimeGetSeconds(bufferDuration));
+        }
     }
-//    if ([keyPath isEqualToString:@"loadedTimeRanges"]) {
-//        NSArray * array = songItem.loadedTimeRanges;
-//        CMTimeRange timeRange = [array.firstObject CMTimeRangeValue]; //本次缓冲的时间范围
-//        NSTimeInterval totalBuffer = CMTimeGetSeconds(timeRange.start) + CMTimeGetSeconds(timeRange.duration); //缓冲总长度
-//        SuLog(@"共缓冲%.2f",totalBuffer);
-//    }
 }
+
+
+
+
+
+
+
+
 - (void)updateLoadedTimeRanges:(NSArray *)timeRanges {
     if (timeRanges && [timeRanges count]) {
         CMTimeRange timerange = [[timeRanges firstObject] CMTimeRangeValue];

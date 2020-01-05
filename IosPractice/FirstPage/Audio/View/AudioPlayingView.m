@@ -290,7 +290,7 @@
         self.playSongBtn.hidden = YES;
         self.pauseSongBtn.hidden = NO;
         
-        [self startRotateAnimation:self.centerImg];
+//        [self startRotateAnimation:self.centerImg];
         //开启定时
         [self.progresstimer setFireDate:[NSDate distantPast]];
         [self startWaterRippleEffect:self.centerImg.frame];
@@ -303,7 +303,7 @@
         self.playSongBtn.hidden = NO;
         self.pauseSongBtn.hidden = YES;
         
-        [self stopRotateAnimation:self.centerImg];
+//        [self stopRotateAnimation:self.centerImg];
         //关闭定时
         [self.progresstimer setFireDate:[NSDate distantFuture]];
         [self stopWaterRippleEffect];
